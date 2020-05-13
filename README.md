@@ -1,34 +1,3 @@
-## Tool , Technologies and Version
-    Python 3.6.8
-    Django 2.2.8
-    psycopg2-binary 2.8.3
-    djangorestframework 3.9.4
-    djangorestframework-jwt 1.11.0
-
-## Installation
-    Inside your root directory create VIRTUAL ENVIRONMENT :
-
-    virtualenv env --python=python3 (If your Current version of Python is Python2)
-
-    virtual env (If your Current default version of Python is Python3)
-
-    After creating Virtual Environment you need to Activate that environment so that all the installed package will only available for this Specific Project not for the rest if any.
-
-    source env/bin/activate
-
-    After activating an environment we need to install all the required packages.
-
-    pip install -r requirements.txt
-
-## To dump data from postgres sql
-    sudo pg_dump -h <HOSTNAME> -U <USERNAME> -f <FILENAME> <DB_Name from where you want to dump>
-    sudo pg_dump -h 13.250.224.209 -U postgres -f ineed.sql INEEDWEBDEVELOPER
-
-## To Load The Data into postgres sql
-    sudo psql -h <HOSTNAME> -U <USERNAME> -d <DB_NAME where you want to load> -f <FILENAME>
-    sudo psql -h 111.91.225.12 -U postgres -d INEEDWEBDEVELOPER -f ineed.sql
-
-    
 ## Install Solidity Compiler in MAC
     https://github.com/crytic/solc-select
     brew update
@@ -98,18 +67,3 @@
 ## Kill Tmux sessions
     tmux kill-session -t <session_name>
 
-
-## How TO Run Celery
-    At first we need to run redis using redis-server command than we need to run this command 
-    celery -A cryptocurrency beat -l debug 
-    and 
-    celery -A cryptocurrency worker -l debug
-
-## How to Setup scheduler
-    Goto Admin pannel and Add  Intervals like in Every "1" and in Period "Minutes"
-    and then Goto 
-    Periodic tasks and add 
-        Name = Task name
-        Task = <appname.filename.function_name>
-        Task = crypto_merchant.tasks.update_ethereum_tokens
-        Interval = select interval
